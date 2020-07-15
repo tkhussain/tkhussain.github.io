@@ -1,0 +1,37 @@
+.star-rating {
+    display: inline-block;
+    .star {
+        display: inline-block;
+        margin: 0;
+        padding: 0 2px;
+        float: left;
+        margin-right: 0;
+        position: relative;
+        &.half {
+            &:before {
+                color: $gray-400;
+            }
+            &:after {
+                color: $pink;
+                position: absolute;
+                top: 0;
+                width: 50%;
+                display: block;
+                height: 100%;
+                overflow: hidden;
+            }
+        }
+        &.empty:before {
+            color: $gray-400;
+        }
+    }
+    .star:before,
+    .star.half:after {
+        content: "\f005";
+        display: block;
+        color: $pink;
+        font-size: $font-size-deault;
+        font-weight: $font-weight-medium;
+        font-family: "Font Awesome 5 Pro";
+    }
+}

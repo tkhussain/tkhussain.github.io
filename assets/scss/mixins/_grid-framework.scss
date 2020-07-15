@@ -1,0 +1,232 @@
+// Framework grid generation
+@mixin make-grid-columns($columns: $grid-columns, $gutter: $grid-gutter-width, $breakpoints: $grid-breakpoints) {
+  // Common properties for all breakpoints
+  %grid-column {
+    position: relative;
+    width: 100%;
+    padding-right: $gutter / 2;
+    padding-left: $gutter / 2;
+  }
+
+  @each $breakpoint in map-keys($breakpoints) {
+    $infix: breakpoint-infix($breakpoint, $breakpoints);
+
+    // Allow columns to stretch full width below their breakpoints
+    @for $i from 1 through $columns {
+      .col#{$infix}-#{$i} {
+        @extend %grid-column;
+      }
+    }
+    .col#{$infix},
+    .col#{$infix}-auto {
+      @extend %grid-column;
+    }
+
+    @include media-breakpoint-up($breakpoint, $breakpoints) {
+      // Provide basic `.col-{bp}` classes for equal-width flexbox columns
+      .col#{$infix} {
+        flex-basis: 0;
+        flex-grow: 1;
+        max-width: 100%;
+      }
+
+      @for $i from 1 through $grid-row-columns {
+        .row-cols#{$infix}-#{$i} {
+          @include row-cols($i);
+        }
+      }
+
+      .col#{$infix}-auto {
+        @include make-col-auto();
+      }
+
+      @for $i from 1 through $columns {
+        .col#{$infix}-#{$i} {
+          @include make-col($i, $columns);
+        }
+      }
+
+      .order#{$infix}-first {
+        order: -1;
+      }
+
+      .order#{$infix}-last {
+        order: $columns + 1;
+      }
+
+      @for $i from 0 through $columns {
+        .order#{$infix}-#{$i} {
+          order: $i;
+        }
+      }
+
+      // `$columns - 1` because offsetting by the width of an entire row isn't possible
+      @for $i from 0 through ($columns - 1) {
+        @if not($infix == "" and $i == 0) {
+          // Avoid emitting useless .offset-0
+          .offset#{$infix}-#{$i} {
+            @include make-col-offset($i, $columns);
+          }
+        }
+      }
+    }
+  }
+}
+
+.explore-row {
+  padding-top: calc(133.333% - 64px);
+  position: relative;
+}
+@media (min-width: 744px) {
+  .explore-row {
+    padding-top: 66.6667%;
+  }
+}
+@media (min-width: 1128px) {
+  .explore-row {
+    padding-top: 50%;
+  }
+}
+
+.select-explore-row {
+  bottom: 0px;
+  left: 0px;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+}
+
+@media (min-width: 744px) {
+  .scrollColumns-row {
+    margin: 0px;
+    overflow: visible;
+    padding: 0px;
+  }
+}
+.scrollColumns-row {
+  height: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  padding: 0px 5px;
+  scroll-padding: 0px 5px;
+}
+
+.scroll-gridColumns {
+  grid-template-columns: 100% 100% 100% 100% 100%;
+}
+.grid-template-columns {
+  display: grid;
+  grid-template-rows: 1fr;
+  height: 100%;
+  gap: 12px;
+}
+
+@media (min-width: 744px) {
+  .grid-template-columns {
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .grid-template-columns:nth-child(n) > :nth-child(1) {
+    grid-column: 1 / auto;
+    grid-row: 1 / span 2;
+  }
+  .grid-template-columns:nth-child(n) > :nth-child(2) {
+    grid-column: 2 / auto;
+    grid-row: 1 / auto;
+  }
+  .grid-template-columns:nth-child(n) > :nth-child(3) {
+    grid-column: 2 / auto;
+    grid-row: 2 / auto;
+  }
+  .grid-template-columns:nth-child(n) > :nth-child(n + 4) {
+    display: none;
+  }
+}
+@media (min-width: 1128px) {
+  .grid-template-columns {
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+  .grid-template-columns:nth-child(n) > :nth-child(3) {
+    grid-column: 3 / auto;
+    grid-row: 1 / auto;
+  }
+  .grid-template-columns:nth-child(n) > :nth-child(4) {
+    display: block;
+    grid-column: 2 / span 2;
+    grid-row: 2 / auto;
+  }
+  .grid-template-columns:nth-child(n) > :nth-child(3) {
+    grid-column: 3 / auto;
+    grid-row: 1 / auto;
+  }
+  .grid-template-columns:nth-child(n) > :nth-child(4) {
+    display: block;
+    grid-column: 2 / span 2;
+    grid-row: 2 / auto;
+  }
+  .grid-template-columns:nth-child(n) > :nth-child(n + 5) {
+    display: none;
+  }
+}
+
+.grid-column-snap-align {
+  scroll-snap-align: center;
+  width: 100%;
+  flex: 0 0 auto;
+}
+.grid-column-link {
+  cursor: pointer;
+  position: relative;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  font-weight: inherit;
+  color: inherit;
+  display: block;
+  text-align: inherit;
+  height: 100%;
+  width: 100%;
+  border-radius: 0px;
+  outline: none;
+  transition: box-shadow 0.2s ease 0s, -ms-transform 0.1s ease 0s, -webkit-transform 0.1s ease 0s,
+    transform 0.1s ease 0s;
+  background: transparent;
+  border-width: initial;
+  border-style: none;
+  border-color: initial;
+  border-image: initial;
+  margin: 0px;
+  padding: 0px;
+  text-decoration: none;
+}
+.grid-cols {
+  height: 100%;
+  position: relative;
+  width: 100%;
+}
+
+.grid-column-img {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+.grid-column-bottom {
+  bottom: 0px;
+  left: 0px;
+  position: absolute;
+  right: 0px;
+  .heading {
+    font-size: 16px;
+    font-weight: $font-weight-medium;
+    color: $white !important;
+    padding: 1rem;
+    line-height: 22px;
+    min-height: 76px;
+    background-color: $gray-900;
+  }
+}

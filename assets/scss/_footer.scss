@@ -1,0 +1,103 @@
+footer {
+  position: relative;
+  z-index: 1;
+  background-color: $light;
+  border-top: 1px solid $gray-500;
+  padding-top: 3rem;
+
+  .footer-wrapper {
+    padding-bottom: 3rem;
+  }
+  .footer-title {
+    font-size: $font-size-deault;
+    position: relative;
+    padding-bottom: 1rem;
+    color: $gray-900;
+    text-transform: uppercase;
+    font-weight: $font-weight-medium;
+  }
+
+  .fotter-menu {
+    font-size: $font-size-deault;
+    color: $gray-900;
+    list-style-type: none;
+    padding: 0rem;
+    margin: 0rem;
+    & li {
+      padding-bottom: 1rem;
+      &:last-child {
+        padding-bottom: 0;
+      }
+    }
+    & a {
+      color: $gray-900;
+      &:hover {
+        color: $body-color;
+        text-decoration: $link-hover-decoration;
+      }
+    }
+  }
+  .footer-bottom {
+    border-top: 1px solid $gray-500;
+    padding-top: 1.5rem;
+    padding-bottom: 1rem;
+    font-size: $font-size-deault;
+    .copyright {
+      font-size: $font-size-deault;
+      p {
+        color: $gray-900;
+        a {
+          color: $body-color;
+          font-size: $font-size-deault;
+          &:hover {
+            text-decoration: $link-hover-decoration;
+          }
+        }
+      }
+    }
+    .dotted {
+      display: inline-block;
+      text-align: center;
+      width: 1rem;
+    }
+  }
+  .footer-icons {
+    & a {
+      font-size: 16px;
+      color: $gray-900;
+      background: transparent;
+      display: inline-block;
+      text-align: center;
+      transition: 0.3s;
+      margin-right: 1.1rem;
+      &:last-child {
+        margin-right: 0;
+        margin-bottom: 0;
+      }
+      &:hover {
+        background: transparent;
+        color: $body-color;
+      }
+    }
+  }
+}
+.footer-mobile-bdr:not(:last-child) {
+  padding-bottom: 0rem;
+  margin-bottom: 0rem;
+  border-bottom: 0rem;
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  footer {
+    .footer-wrapper {
+      padding-bottom: 2rem;
+    }
+    .footer-bottom {
+      text-align: center;
+    }
+  }
+  .footer-mobile-bdr:not(:last-child) {
+    margin-bottom: 2.3rem;
+    border-bottom: 1px solid $gray-500;
+  }
+}

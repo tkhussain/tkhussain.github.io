@@ -1,16 +1,1327 @@
-
 <!doctype html>
 <html class="no-js" lang="zxx">
-
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>PIP | Clikai</title>
-    <!-- common start here -->
-</head>
-
-<body>
-test
-</body>
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>PIP | Clikai</title>
+      <!-- common start here -->
+      <!-- favicon icon -->
+      <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+      <!-- css start here -->
+      <link rel="stylesheet" type="text/css" href="assets/scss/main.css">
+      <!-- carousel start here -->
+      <link rel="stylesheet" type="text/css" href="assets/css/owl.carousel.min.css" />
+      <!-- common end here -->
+   </head>
+   <body>
+      <!-- covid19 start here -->
+      <div class="covid19 p-3"><a href="/" target="_blank"><span>Get the latest on our COVID-19 response</span></a></div>
+      <!-- covid19 end here -->
+      <!-- header start here -->
+      <header class="header hdrscrollshowdiv" id="header">
+         <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+               <a class="navbar-brand" href="index.html"><img src="assets/img/airbnb-logo.png"
+                  alt="PIP Clikai logo symbol" /></a>
+               <!-- header scroll show div start here -->
+               <div class="header-search-listing little-search-scroll-wra">
+                  <div class="header-little-searchbar">
+                     <button class="header-search-button" type="button" data-toggle="modal"
+                        data-target="#desktopHdr-modalFullSearch">
+                     <span class="header-search-icon"><i class="fas fa-search"></i></span>
+                     <span class="header-search-hidden-text">Location</span>Add a location
+                     </button>
+                  </div>
+               </div>
+               <!-- header scroll show div end here -->
+               <!-- header mobile search bar show div start here -->
+               <div class="header-mob-search-bar mobWidthSearchBar mobileHdr-searchBar">
+                  <button type="button" class="header-search-button-bar" data-toggle="modal"
+                     data-target="#mobileModalLocation-fullSearchBar">
+                     <span class="header-search-icon"><i class="fas fa-search"></i></span>
+                     <div class="header-search-text">Add a location</div>
+                  </button>
+               </div>
+               <!-- header mobile search bar show div end here -->
+               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                  aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"> <span
+                  class="navbar-toggler-icon"></span> </button>
+               <div class="collapse navbar-collapse" id="navbarResponsive">
+                  <ul class="navbar-nav ml-auto">
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle arrow-dropdown" href="javascript:void(0);"
+                           id="languageDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                           aria-expanded="false"> <i class="fas fa-globe"></i> </a>
+                        <ul class="dropdown-menu zoom-out languageDropdown" aria-labelledby="languageDropdownMenuLink">
+                           <li>
+                              <a class="dropdown-item" href="#">
+                                 <div class="dropdown-icon"><i class="fas fa-globe"></i></div>
+                                 English (IN)
+                              </a>
+                           </li>
+                           <li>
+                              <a class="dropdown-item" href="#">
+                                 <div class="dropdown-icon"><i class="far fa-rupee-sign"></i></div>
+                                 INR
+                              </a>
+                           </li>
+                        </ul>
+                     </li>
+                     <li class="nav-item menuHideScroll"><a class="nav-link" href="#">Host your home</a></li>
+                     <li class="nav-item menuHideScroll"><a class="nav-link" href="#">Host an experience</a> </li>
+                     <li class="nav-item"><a class="nav-link" href="#">Help</a></li>
+                     <li class="nav-item menuHideScroll"><a class="nav-link" href="#">Log in</a></li>
+                     <li class="nav-item header-button"><a class="nav-link btn" href="#">Sign up </a></li>
+                  </ul>
+               </div>
+            </div>
+         </nav>
+      </header>
+      <!-- header desktop show scroll search listing modal start here -->
+      <div class="modal fade mobileModal-fullscreen hdrModal-searchbar" id="desktopHdr-modalFullSearch" tabindex="-1"
+         role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+         <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+               <div>
+                  <button type="button" class="close btn-close btn-circle" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true" class="btn-alingment">&times;</span>
+                  </button>
+               </div>
+               <form class="listing-filter p-5" action="search.html" method="get" role="search">
+                  <div class="grid-listing">
+                     <div class="tabbable-responsive">
+                        <div class="tabbable">
+                           <ul class="nav nav-tabs" id="myTab" role="tablist">
+                              <li class="nav-item">
+                                 <a class="nav-link active" id="placesstay" data-toggle="tab" href="#places"
+                                    role="tab" aria-controls="places" aria-selected="true">Places to stay</a>
+                              </li>
+                              <li class="nav-item">
+                                 <a class="nav-link" id="experiencestab" data-toggle="tab" href="#experiences"
+                                    role="tab" aria-controls="experiences" aria-selected="false">Experiences</a>
+                              </li>
+                           </ul>
+                        </div>
+                     </div>
+                     <div class="tab-content mt-4">
+                        <div class="tab-pane fade show active" id="places" role="tabpanel" aria-labelledby="placesstay">
+                           <div class="search-listing" data-panel-bounds="true">
+                              <div class="custom-search-row">
+                                 <div class="location-col">
+                                    <div class="location-search-input">
+                                       <label class="label-search-input-space selected-input-field dropdown-toggle"
+                                          id="menuBarPanel-room-type" data-toggle="dropdown" aria-haspopup="true"
+                                          aria-expanded="false">
+                                          <div class="search-inputcol">
+                                             <div class="labelName">Location</div>
+                                             <input class="search-input-field"
+                                                placeholder="Where are you going?">
+                                          </div>
+                                          <!-- dropdown box -->
+                                          <div class="dropdown-menu search-filter-dropdwon loc-prediction"
+                                             aria-labelledby="menuBarPanel-room-type">
+                                             <div class="scroll-box p-0">
+                                                <ul class="list-group search-suggestion-list-row">
+                                                   <li
+                                                      class="list-group-item d-flex justify-content-between align-items-center search-bar_option px-3 py-2">
+                                                      <div class="search-listbox-col">
+                                                         <i class="fas fa-map-marker-alt"></i>
+                                                      </div>
+                                                      <div class="labelledby-predictions">
+                                                         <div class="prediction-text">Gurgaon, Haryana
+                                                         </div>
+                                                      </div>
+                                                   </li>
+                                                   <li
+                                                      class="list-group-item d-flex justify-content-between align-items-center search-bar_option px-3 py-2">
+                                                      <div class="search-listbox-col">
+                                                         <i class="fas fa-map-marker-alt"></i>
+                                                      </div>
+                                                      <div class="labelledby-predictions">
+                                                         <div class="prediction-text">Gurgaon</div>
+                                                      </div>
+                                                   </li>
+                                                   <li
+                                                      class="list-group-item d-flex justify-content-between align-items-center search-bar_option px-3 py-2">
+                                                      <div class="search-listbox-col">
+                                                         <i class="fas fa-map-marker-alt"></i>
+                                                      </div>
+                                                      <div class="labelledby-predictions">
+                                                         <div class="prediction-text">Gurgaon Rural,
+                                                            Haryana
+                                                         </div>
+                                                      </div>
+                                                   </li>
+                                                   <li
+                                                      class="list-group-item d-flex justify-content-between align-items-center search-bar_option px-3 py-2">
+                                                      <div class="search-listbox-col">
+                                                         <i class="fas fa-map-marker-alt"></i>
+                                                      </div>
+                                                      <div class="labelledby-predictions">
+                                                         <div class="prediction-text">Gurgaon, Haryana
+                                                         </div>
+                                                      </div>
+                                                   </li>
+                                                   <li
+                                                      class="list-group-item d-flex justify-content-between align-items-center search-bar_option px-3 py-2">
+                                                      <div class="search-listbox-col">
+                                                         <i class="fas fa-map-marker-alt"></i>
+                                                      </div>
+                                                      <div class="labelledby-predictions">
+                                                         <div class="prediction-text">Gurgaon, Haryana
+                                                         </div>
+                                                      </div>
+                                                   </li>
+                                                   <li
+                                                      class="list-group-item d-flex justify-content-between align-items-center search-bar_option px-3 py-2">
+                                                      <div class="search-listbox-col">
+                                                         <i class="fas fa-map-marker-alt"></i>
+                                                      </div>
+                                                      <div class="labelledby-predictions">
+                                                         <div class="prediction-text">Nearby</div>
+                                                      </div>
+                                                   </li>
+                                                </ul>
+                                             </div>
+                                          </div>
+                                       </label>
+                                    </div>
+                                 </div>
+                                 <div class="separatorline"></div>
+                                 <div class="selectdate-columns">
+                                    <div class="form-group-cols">
+                                       <button class="input-field-cols selected-input-field" type="button">
+                                          <div class="selectdate-space">
+                                             <div class="labelName">Check in</div>
+                                             <input type="search" class="search-input-field" name="daterange"
+                                                value="Jul 05" />
+                                          </div>
+                                       </button>
+                                    </div>
+                                    <div class="separatorline"></div>
+                                    <div class="form-group-cols">
+                                       <button
+                                          class="input-field-cols selected-input-field" type="button">
+                                          <div class="selectdate-space">
+                                             <div class="labelName">Check out</div>
+                                             <input type="search" class="search-input-field" name="daterange"
+                                                value="Jul 08" />
+                                          </div>
+                                       </button>
+                                    </div>
+                                 </div>
+                                 <div class="separatorline"></div>
+                                 <div class="form-group-cols">
+                                    <button class="input-field-cols dropdown-toggle"
+                                       type="button" id="menuBarPanel-room-type" data-toggle="dropdown"
+                                       aria-haspopup="true" aria-expanded="false">
+                                       <div class="selectdate-space">
+                                          <div class="labelName">Guests</div>
+                                          <div class="choosedate-input-field">2
+                                             guests, 1 infant
+                                          </div>
+                                       </div>
+                                    </button>
+                                    <!-- dropdown box -->
+                                    <div class="dropdown-menu search-filter-dropdwon room-type"
+                                       aria-labelledby="menuBarPanel-room-type">
+                                       <div class="scroll-box">
+                                          <ul class="list-group">
+                                             <li
+                                                class="list-group-item list-group-item-border-btm pt-0 pl-0 pr-0 d-flex justify-content-between align-items-center">
+                                                <div class="searchFlow-label-stepper">
+                                                   <div class="heading">Adults</div>
+                                                   <div class="text-secondary">Ages 13 or above</div>
+                                                </div>
+                                                <div class="addMore-col">
+                                                   <button class="btn-add-more btn-circle" type="button"
+                                                      aria-label="decrease value"><span><i
+                                                      class="far fa-minus"></i></span></button>
+                                                   <div class="or-text"><span aria-hidden="true">1</span>
+                                                   </div>
+                                                   <button class="btn-add-more btn-circle" type="button"
+                                                      aria-label="increase value"><span><i
+                                                      class="far fa-plus"></i></span></button>
+                                                </div>
+                                             </li>
+                                             <li
+                                                class="list-group-item list-group-item-border-btm pl-0 pr-0 d-flex justify-content-between align-items-center">
+                                                <div class="searchFlow-label-stepper">
+                                                   <div class="heading">Children</div>
+                                                   <div class="text-secondary">Ages 2–12</div>
+                                                </div>
+                                                <div class="addMore-col">
+                                                   <button class="btn-add-more btn-circle" type="button"
+                                                      aria-label="decrease value"><span><i
+                                                      class="far fa-minus"></i></span></button>
+                                                   <div class="or-text"><span aria-hidden="true">1</span>
+                                                   </div>
+                                                   <button class="btn-add-more btn-circle" type="button"
+                                                      aria-label="increase value"><span><i
+                                                      class="far fa-plus"></i></span></button>
+                                                </div>
+                                             </li>
+                                             <li
+                                                class="list-group-item list-group-item-border-btm pl-0 pr-0 d-flex justify-content-between align-items-center">
+                                                <div class="searchFlow-label-stepper">
+                                                   <div class="heading">Infants</div>
+                                                   <div class="text-secondary">Under 2</div>
+                                                </div>
+                                                <div class="addMore-col">
+                                                   <button class="btn-add-more btn-circle" type="button"
+                                                      aria-label="decrease value"><span><i
+                                                      class="far fa-minus"></i></span></button>
+                                                   <div class="or-text"><span aria-hidden="true">1</span>
+                                                   </div>
+                                                   <button class="btn-add-more btn-circle" type="button"
+                                                      aria-label="increase value"><span><i
+                                                      class="far fa-plus"></i></span></button>
+                                                </div>
+                                             </li>
+                                          </ul>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="button-space">
+                                 <button type="submit" class="button-submit">
+                                 <span class="button-alignment">
+                                 <span class="search-icon">
+                                 <i class="far fa-search"></i>
+                                 </span>
+                                 <span class="search-text">Search</span>
+                                 </span></button>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="tab-pane fade" id="experiences" role="tabpanel" aria-labelledby="experiencestab">
+                           <div class="search-listing" data-panel-bounds="true">
+                              <div class="custom-search-row">
+                                 <div class="location-half-col">
+                                    <div class="location-search-input">
+                                       <label class="label-search-input-space dropdown-toggle"
+                                          id="menuBarPanel-room-type" data-toggle="dropdown" aria-haspopup="true"
+                                          aria-expanded="false">
+                                          <div class="search-inputcol">
+                                             <div class="labelName">Location</div>
+                                             <input class="search-input-field"
+                                                placeholder="Where are you going?">
+                                          </div>
+                                          <!-- dropdown box -->
+                                          <div class="dropdown-menu search-filter-dropdwon loc-prediction"
+                                             aria-labelledby="menuBarPanel-room-type">
+                                             <div class="scroll-box p-0">
+                                                <ul class="list-group search-suggestion-list-row">
+                                                   <li
+                                                      class="list-group-item d-flex justify-content-between align-items-center search-bar_option px-3 py-2">
+                                                      <div class="search-listbox-col">
+                                                         <i class="fas fa-map-marker-alt"></i>
+                                                      </div>
+                                                      <div class="labelledby-predictions">
+                                                         <div class="prediction-text">Gurgaon, Haryana
+                                                         </div>
+                                                      </div>
+                                                   </li>
+                                                   <li
+                                                      class="list-group-item d-flex justify-content-between align-items-center search-bar_option px-3 py-2">
+                                                      <div class="search-listbox-col">
+                                                         <i class="fas fa-map-marker-alt"></i>
+                                                      </div>
+                                                      <div class="labelledby-predictions">
+                                                         <div class="prediction-text">Gurgaon</div>
+                                                      </div>
+                                                   </li>
+                                                   <li
+                                                      class="list-group-item d-flex justify-content-between align-items-center search-bar_option px-3 py-2">
+                                                      <div class="search-listbox-col">
+                                                         <i class="fas fa-map-marker-alt"></i>
+                                                      </div>
+                                                      <div class="labelledby-predictions">
+                                                         <div class="prediction-text">Gurgaon Rural,
+                                                            Haryana
+                                                         </div>
+                                                      </div>
+                                                   </li>
+                                                   <li
+                                                      class="list-group-item d-flex justify-content-between align-items-center search-bar_option px-3 py-2">
+                                                      <div class="search-listbox-col">
+                                                         <i class="fas fa-map-marker-alt"></i>
+                                                      </div>
+                                                      <div class="labelledby-predictions">
+                                                         <div class="prediction-text">Gurgaon, Haryana
+                                                         </div>
+                                                      </div>
+                                                   </li>
+                                                   <li
+                                                      class="list-group-item d-flex justify-content-between align-items-center search-bar_option px-3 py-2">
+                                                      <div class="search-listbox-col">
+                                                         <i class="fas fa-map-marker-alt"></i>
+                                                      </div>
+                                                      <div class="labelledby-predictions">
+                                                         <div class="prediction-text">Gurgaon, Haryana
+                                                         </div>
+                                                      </div>
+                                                   </li>
+                                                   <li
+                                                      class="list-group-item d-flex justify-content-between align-items-center search-bar_option px-3 py-2">
+                                                      <div class="search-listbox-col">
+                                                         <i class="fas fa-map-marker-alt"></i>
+                                                      </div>
+                                                      <div class="labelledby-predictions">
+                                                         <div class="prediction-text">Nearby</div>
+                                                      </div>
+                                                   </li>
+                                                </ul>
+                                             </div>
+                                          </div>
+                                       </label>
+                                    </div>
+                                 </div>
+                                 <div class="separatorline"></div>
+                                 <div class="form-group-half-col">
+                                    <button class="input-field-cols" type="button">
+                                       <div class="selectdate-space">
+                                          <div class="labelName">Date</div>
+                                          <input type="search" class="search-input-field" name="daterange"
+                                             value="Jul 05 - Jul 08" />
+                                       </div>
+                                    </button>
+                                 </div>
+                              </div>
+                              <div class="button-space">
+                                 <button type="submit" class="button-submit">
+                                 <span class="button-alignment">
+                                 <span class="search-icon">
+                                 <i class="far fa-search"></i>
+                                 </span>
+                                 <span class="search-text">Search</span>
+                                 </span></button>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </form>
+            </div>
+         </div>
+      </div>
+      <!-- header desktop show scroll search listing modal end here -->
+      <!-- header mobile search bar modal location start here -->
+      <div class="modal fade mobileModalLocation-fullscreen mobileModal-fullscreen" id="mobileModalLocation-fullSearchBar"
+         tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+         <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+               <div class="d-flex justify-content-between align-items-center pt-3 px-1">
+                  <div class="location-selectfiled-edit-row">
+                     <div class="mobile-search-bar-hdrshow">
+                        <form class="selectfiled-edit-row" action="/" method="get" role="search">
+                           <div dir="ltr">
+                              <label class="mobile-p1-search-bar-input">
+                                 <span class="mobile-search-bar-hiddenText">Location</span>
+                                 <div class="mobile-keyword-search-bar"><button type="submit"
+                                    class="mobile-search-bar-icon"><i class="fas fa-search"></i></button></div>
+                                 <div class="mobile-search-bar-inputcol"><input class="mobile-search-bar-inputField"
+                                    name="query" placeholder="Where are you going?" type="text" value=""></div>
+                              </label>
+                           </div>
+                        </form>
+                     </div>
+                  </div>
+                  <div><button type="button" class="close btn-circle" data-dismiss="modal" aria-label="Close">
+                     <span aria-hidden="true" class="btn-alingment">&times;</span>
+                     </button>
+                  </div>
+               </div>
+               <div class="modal-body">
+                  <ul class="list-group search-suggestion-list-row">
+                     <li
+                        class="list-group-item d-flex justify-content-between align-items-center search-bar_option px-3 py-2">
+                        <div class="search-listbox-col">
+                           <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="labelledby-predictions">
+                           <div class="prediction-text">Gurgaon, Haryana</div>
+                        </div>
+                     </li>
+                     <li
+                        class="list-group-item d-flex justify-content-between align-items-center search-bar_option px-3 py-2">
+                        <div class="search-listbox-col">
+                           <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="labelledby-predictions">
+                           <div class="prediction-text">Gurgaon</div>
+                        </div>
+                     </li>
+                     <li
+                        class="list-group-item d-flex justify-content-between align-items-center search-bar_option px-3 py-2">
+                        <div class="search-listbox-col">
+                           <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="labelledby-predictions">
+                           <div class="prediction-text">Gurgaon Rural, Haryana</div>
+                        </div>
+                     </li>
+                     <li
+                        class="list-group-item d-flex justify-content-between align-items-center search-bar_option px-3 py-2">
+                        <div class="search-listbox-col">
+                           <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="labelledby-predictions">
+                           <div class="prediction-text">Nearby</div>
+                        </div>
+                     </li>
+                     <li
+                        class="list-group-item d-flex justify-content-between align-items-center search-bar_option px-3 py-2">
+                        <div class="search-listbox-col">
+                           <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="labelledby-predictions">
+                           <div class="prediction-text">Nearby</div>
+                        </div>
+                     </li>
+                     <li
+                        class="list-group-item d-flex justify-content-between align-items-center search-bar_option px-3 py-2">
+                        <div class="search-listbox-col">
+                           <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="labelledby-predictions">
+                           <div class="prediction-text">Nearby</div>
+                        </div>
+                     </li>
+                     <li
+                        class="list-group-item d-flex justify-content-between align-items-center search-bar_option px-3 py-2">
+                        <div class="search-listbox-col">
+                           <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="labelledby-predictions">
+                           <div class="prediction-text">Nearby</div>
+                        </div>
+                     </li>
+                     <li
+                        class="list-group-item d-flex justify-content-between align-items-center search-bar_option px-3 py-2">
+                        <div class="search-listbox-col">
+                           <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="labelledby-predictions">
+                           <div class="prediction-text">Nearby</div>
+                        </div>
+                     </li>
+                     <li
+                        class="list-group-item d-flex justify-content-between align-items-center search-bar_option px-3 py-2">
+                        <div class="search-listbox-col">
+                           <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="labelledby-predictions">
+                           <div class="prediction-text">Nearby</div>
+                        </div>
+                     </li>
+                     <li
+                        class="list-group-item d-flex justify-content-between align-items-center search-bar_option px-3 py-2">
+                        <div class="search-listbox-col">
+                           <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="labelledby-predictions">
+                           <div class="prediction-text">Nearby</div>
+                        </div>
+                     </li>
+                  </ul>
+                  <h5 class="font-weight-medium mb-3 ml-1"><small>NEARBY GETAWAYS</small></h5>
+                  <div class="mobile-search-input-selected-option">
+                     <span>Pune</span><span>Candolim</span><span>Siolim</span><span>Vagator</span>
+                     <span>Calangute</span><span>Arpora</span><span>Ahmedabad</span><span>Nashik</span>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- header mobile search bar modal location end here -->
+      <!-- header end here -->
+      <main>
+         <div class="container">
+            <!-- search-filter start here -->
+            <form class="listing-filter" action="search.html" method="get" role="search">
+               <div class="grid-listing my-5">
+                  <div class="tabbable-responsive">
+                     <div class="tabbable">
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                           <li class="nav-item">
+                              <a class="nav-link active" id="placesstay1" data-toggle="tab" href="#places1" role="tab"
+                                 aria-controls="places1" aria-selected="true">Places to stay</a>
+                           </li>
+                           <li class="nav-item">
+                              <a class="nav-link" id="experiencestab1" data-toggle="tab" href="#experiences1" role="tab"
+                                 aria-controls="experiences1" aria-selected="false">Experiences</a>
+                           </li>
+                           <li class="nav-item">
+                              <a class="nav-link" href="#">Online Experiences<span
+                                 class="badge badge-dark ml-2 text-uppercase">New</span></a>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="tab-content mt-4">
+                     <div class="tab-pane fade show active" id="places1" role="tabpanel" aria-labelledby="placesstay1">
+                        <div class="search-listing" data-panel-bounds="true">
+                           <div class="custom-search-row">
+                              <div class="location-col">
+                                 <div class="location-search-input">
+                                    <label class="label-search-input-space dropdown-toggle" id="menuBarPanel-room-type"
+                                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                       <div class="search-inputcol">
+                                          <div class="labelName">Location</div>
+                                          <input class="search-input-field" placeholder="Where are you going?">
+                                       </div>
+                                       <!-- dropdown box -->
+                                       <div class="dropdown-menu search-filter-dropdwon loc-prediction"
+                                          aria-labelledby="menuBarPanel-room-type">
+                                          <div class="scroll-box p-0">
+                                             <ul class="list-group search-suggestion-list-row">
+                                                <li
+                                                   class="list-group-item d-flex justify-content-between align-items-center search-bar_option px-3 py-2">
+                                                   <div class="search-listbox-col">
+                                                      <i class="fas fa-map-marker-alt"></i>
+                                                   </div>
+                                                   <div class="labelledby-predictions">
+                                                      <div class="prediction-text">Gurgaon, Haryana
+                                                      </div>
+                                                   </div>
+                                                </li>
+                                                <li
+                                                   class="list-group-item d-flex justify-content-between align-items-center search-bar_option px-3 py-2">
+                                                   <div class="search-listbox-col">
+                                                      <i class="fas fa-map-marker-alt"></i>
+                                                   </div>
+                                                   <div class="labelledby-predictions">
+                                                      <div class="prediction-text">Gurgaon</div>
+                                                   </div>
+                                                </li>
+                                                <li
+                                                   class="list-group-item d-flex justify-content-between align-items-center search-bar_option px-3 py-2">
+                                                   <div class="search-listbox-col">
+                                                      <i class="fas fa-map-marker-alt"></i>
+                                                   </div>
+                                                   <div class="labelledby-predictions">
+                                                      <div class="prediction-text">Gurgaon Rural,
+                                                         Haryana
+                                                      </div>
+                                                   </div>
+                                                </li>
+                                                <li
+                                                   class="list-group-item d-flex justify-content-between align-items-center search-bar_option px-3 py-2">
+                                                   <div class="search-listbox-col">
+                                                      <i class="fas fa-map-marker-alt"></i>
+                                                   </div>
+                                                   <div class="labelledby-predictions">
+                                                      <div class="prediction-text">Gurgaon, Haryana
+                                                      </div>
+                                                   </div>
+                                                </li>
+                                                <li
+                                                   class="list-group-item d-flex justify-content-between align-items-center search-bar_option px-3 py-2">
+                                                   <div class="search-listbox-col">
+                                                      <i class="fas fa-map-marker-alt"></i>
+                                                   </div>
+                                                   <div class="labelledby-predictions">
+                                                      <div class="prediction-text">Gurgaon, Haryana
+                                                      </div>
+                                                   </div>
+                                                </li>
+                                                <li
+                                                   class="list-group-item d-flex justify-content-between align-items-center search-bar_option px-3 py-2">
+                                                   <div class="search-listbox-col">
+                                                      <i class="fas fa-map-marker-alt"></i>
+                                                   </div>
+                                                   <div class="labelledby-predictions">
+                                                      <div class="prediction-text">Gurgaon, Haryana
+                                                      </div>
+                                                   </div>
+                                                </li>
+                                                <li
+                                                   class="list-group-item d-flex justify-content-between align-items-center search-bar_option px-3 py-2">
+                                                   <div class="search-listbox-col">
+                                                      <i class="fas fa-map-marker-alt"></i>
+                                                   </div>
+                                                   <div class="labelledby-predictions">
+                                                      <div class="prediction-text">Nearby</div>
+                                                   </div>
+                                                </li>
+                                             </ul>
+                                          </div>
+                                       </div>
+                                    </label>
+                                 </div>
+                              </div>
+                              <div class="separatorline"></div>
+                              <div class="selectdate-columns">
+                                 <div class="form-group-cols">
+                                    <button class="input-field-cols" type="button">
+                                       <div class="selectdate-space">
+                                          <div class="labelName">Check in</div>
+                                          <input type="search" class="search-input-field" name="daterange"
+                                             value="Add dates" />
+                                       </div>
+                                    </button>
+                                 </div>
+                                 <div class="separatorline"></div>
+                                 <div class="form-group-cols">
+                                    <button class="input-field-cols" type="button">
+                                       <div class="selectdate-space">
+                                          <div class="labelName">Check out</div>
+                                          <input type="search" class="search-input-field" name="daterange"
+                                             value="Add dates" />
+                                       </div>
+                                    </button>
+                                 </div>
+                              </div>
+                              <div class="separatorline"></div>
+                              <div class="form-group-cols dropdown">
+                                 <button
+                                    class="input-field-cols selected-input-field dropdown-toggle" type="button"
+                                    id="menuBarPanel-room-type" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false">
+                                    <div class="selectdate-space">
+                                       <div class="labelName">Guests</div>
+                                       <div class="choosedate-input-field">Add guests</div>
+                                    </div>
+                                 </button>
+                                 <div class="clearIcon">
+                                    <button type="button" class="button-clear">
+                                    <span class="closeIcon">
+                                    <i class="far fa-times"></i>
+                                    </span>
+                                    </button>
+                                 </div>
+                                 <!-- dropdown box -->
+                                 <div class="dropdown-menu search-filter-dropdwon room-type"
+                                    aria-labelledby="menuBarPanel-room-type">
+                                    <div class="scroll-box">
+                                       <ul class="list-group">
+                                          <li
+                                             class="list-group-item list-group-item-border-btm pl-0 pt-0 pr-0 d-flex justify-content-between align-items-center">
+                                             <div class="searchFlow-label-stepper">
+                                                <div class="heading">Adults</div>
+                                                <div class="text-secondary">Ages 13 or above</div>
+                                             </div>
+                                             <div class="addMore-col">
+                                                <button class="btn-add-more btn-circle" type="button"
+                                                   aria-label="decrease value"><span><i
+                                                   class="far fa-minus"></i></span></button>
+                                                <div class="or-text"><span aria-hidden="true">1</span>
+                                                </div>
+                                                <button class="btn-add-more btn-circle" type="button"
+                                                   aria-label="increase value"><span><i
+                                                   class="far fa-plus"></i></span></button>
+                                             </div>
+                                          </li>
+                                          <li
+                                             class="list-group-item list-group-item-border-btm pl-0 pr-0 d-flex justify-content-between align-items-center">
+                                             <div class="searchFlow-label-stepper">
+                                                <div class="heading">Children</div>
+                                                <div class="text-secondary">Ages 2–12</div>
+                                             </div>
+                                             <div class="addMore-col">
+                                                <button class="btn-add-more btn-circle" type="button"
+                                                   aria-label="decrease value"><span><i
+                                                   class="far fa-minus"></i></span></button>
+                                                <div class="or-text"><span aria-hidden="true">1</span>
+                                                </div>
+                                                <button class="btn-add-more btn-circle" type="button"
+                                                   aria-label="increase value"><span><i
+                                                   class="far fa-plus"></i></span></button>
+                                             </div>
+                                          </li>
+                                          <li
+                                             class="list-group-item list-group-item-border-btm pl-0 pr-0 d-flex justify-content-between align-items-center">
+                                             <div class="searchFlow-label-stepper">
+                                                <div class="heading">Infants</div>
+                                                <div class="text-secondary">Under 2</div>
+                                             </div>
+                                             <div class="addMore-col">
+                                                <button class="btn-add-more btn-circle" type="button"
+                                                   aria-label="decrease value"><span><i
+                                                   class="far fa-minus"></i></span></button>
+                                                <div class="or-text"><span aria-hidden="true">1</span>
+                                                </div>
+                                                <button class="btn-add-more btn-circle" type="button"
+                                                   aria-label="increase value"><span><i
+                                                   class="far fa-plus"></i></span></button>
+                                             </div>
+                                          </li>
+                                       </ul>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="button-space">
+                              <button type="submit" class="button-submit">
+                              <span class="button-alignment">
+                              <span class="search-icon">
+                              <i class="far fa-search"></i>
+                              </span>
+                              <span class="search-text">Search</span>
+                              </span></button>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="tab-pane fade" id="experiences1" role="tabpanel" aria-labelledby="experiencestab1">
+                        <div class="search-listing" data-panel-bounds="true">
+                           <div class="custom-search-row">
+                              <div class="location-half-col">
+                                 <div class="location-search-input">
+                                    <label class="label-search-input-space dropdown-toggle" id="menuBarPanel-room-type"
+                                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                       <div class="search-inputcol">
+                                          <div class="labelName">Location</div>
+                                          <input class="search-input-field" placeholder="Where are you going?">
+                                       </div>
+                                       <!-- dropdown box -->
+                                       <div class="dropdown-menu search-filter-dropdwon loc-prediction"
+                                          aria-labelledby="menuBarPanel-room-type">
+                                          <div class="scroll-box p-0">
+                                             <ul class="list-group search-suggestion-list-row">
+                                                <li
+                                                   class="list-group-item d-flex justify-content-between align-items-center search-bar_option px-3 py-2">
+                                                   <div class="search-listbox-col">
+                                                      <i class="fas fa-map-marker-alt"></i>
+                                                   </div>
+                                                   <div class="labelledby-predictions">
+                                                      <div class="prediction-text">Gurgaon, Haryana
+                                                      </div>
+                                                   </div>
+                                                </li>
+                                                <li
+                                                   class="list-group-item d-flex justify-content-between align-items-center search-bar_option px-3 py-2">
+                                                   <div class="search-listbox-col">
+                                                      <i class="fas fa-map-marker-alt"></i>
+                                                   </div>
+                                                   <div class="labelledby-predictions">
+                                                      <div class="prediction-text">Gurgaon</div>
+                                                   </div>
+                                                </li>
+                                                <li
+                                                   class="list-group-item d-flex justify-content-between align-items-center search-bar_option px-3 py-2">
+                                                   <div class="search-listbox-col">
+                                                      <i class="fas fa-map-marker-alt"></i>
+                                                   </div>
+                                                   <div class="labelledby-predictions">
+                                                      <div class="prediction-text">Gurgaon Rural,
+                                                         Haryana
+                                                      </div>
+                                                   </div>
+                                                </li>
+                                                <li
+                                                   class="list-group-item d-flex justify-content-between align-items-center search-bar_option px-3 py-2">
+                                                   <div class="search-listbox-col">
+                                                      <i class="fas fa-map-marker-alt"></i>
+                                                   </div>
+                                                   <div class="labelledby-predictions">
+                                                      <div class="prediction-text">Gurgaon, Haryana
+                                                      </div>
+                                                   </div>
+                                                </li>
+                                                <li
+                                                   class="list-group-item d-flex justify-content-between align-items-center search-bar_option px-3 py-2">
+                                                   <div class="search-listbox-col">
+                                                      <i class="fas fa-map-marker-alt"></i>
+                                                   </div>
+                                                   <div class="labelledby-predictions">
+                                                      <div class="prediction-text">Gurgaon, Haryana
+                                                      </div>
+                                                   </div>
+                                                </li>
+                                                <li
+                                                   class="list-group-item d-flex justify-content-between align-items-center search-bar_option px-3 py-2">
+                                                   <div class="search-listbox-col">
+                                                      <i class="fas fa-map-marker-alt"></i>
+                                                   </div>
+                                                   <div class="labelledby-predictions">
+                                                      <div class="prediction-text">Nearby</div>
+                                                   </div>
+                                                </li>
+                                             </ul>
+                                          </div>
+                                       </div>
+                                    </label>
+                                 </div>
+                              </div>
+                              <div class="separatorline"></div>
+                              <div class="form-group-half-col">
+                                 <button class="input-field-cols" type="button">
+                                    <div class="selectdate-space">
+                                       <div class="labelName">Date</div>
+                                       <input type="search" class="search-input-field" name="daterange"
+                                          value="Add when you want to go" />
+                                    </div>
+                                 </button>
+                              </div>
+                           </div>
+                           <div class="button-space">
+                              <button type="submit" class="button-submit">
+                              <span class="button-alignment">
+                              <span class="search-icon">
+                              <i class="far fa-search"></i>
+                              </span>
+                              <span class="search-text">Search</span>
+                              </span></button>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </form>
+            <!-- search-filter end here -->
+            <h1 class="section-heading width-cols"><span>You don't need to go far to find what matters.</span></h1>
+         </div>
+         <!-- card album start here -->
+         <div class="album bg-section">
+            <div class="container">
+               <div class="row">
+                  <div class="scroll-snap-row">
+                     <div class="col-md-4 mb-4">
+                        <a href="/">
+                           <div class="card box-shadow card-album">
+                              <div class="badge-sup-top-left">
+                                 <div class="badge badge-light text-uppercase bg-white">NEW</div>
+                              </div>
+                              <div class="card-img-top overflow-hidden"> <img src="assets/img/1-3.jpg"
+                                 class="img-fluid"> </div>
+                              <div class="card-body">
+                                 <h2 class="heading">Nearby getaways</h2>
+                                 <p class="card-text">Switch off or reconnect on a trip that’s just a short drive
+                                    away.
+                                 </p>
+                              </div>
+                           </div>
+                        </a>
+                     </div>
+                     <div class="col-md-4 mb-4">
+                        <a href="/">
+                           <div class="card box-shadow card-album">
+                              <div class="card-img-top overflow-hidden"> <img src="assets/img/1.jpg"
+                                 class="img-fluid"> </div>
+                              <div class="card-body">
+                                 <h2 class="heading">Online Experiences</h2>
+                                 <p class="card-text">Unique activities we can do together, led by a world of
+                                    hosts.
+                                 </p>
+                              </div>
+                           </div>
+                        </a>
+                     </div>
+                     <div class="col-md-4 mb-4">
+                        <a href="/">
+                           <div class="card box-shadow card-album">
+                              <div class="card-img-top overflow-hidden"> <img src="assets/img/1-2.jpg"
+                                 class="img-fluid"> </div>
+                              <div class="card-body">
+                                 <h2 class="heading">Entire homes</h2>
+                                 <p class="card-text">Comfortable private places, with room for friends or
+                                    family.
+                                 </p>
+                              </div>
+                           </div>
+                        </a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- card album end here -->
+         <!-- Explore all start here -->
+         <div class="bg-section clearfix bg-body">
+            <div class="container">
+               <div class="d-flex mb-4 text-white">
+                  <div class="p-2">
+                     <h3 class="font-weight-bold">Online Experiences for Pride</h3>
+                     <div class="width-description">Explore local LGBTQIA+ history and social life in communities
+                        around the
+                        world. Join live, interactive video sessions led by one-of-a-kind hosts – all without
+                        leaving home.
+                     </div>
+                  </div>
+                  <div class="ml-auto p-2"><a href="/" class="btn btn-outline-light">Explore&nbspall</a></div>
+               </div>
+               <!-- Grid row -->
+               <div class="explore-row">
+                  <div class="select-explore-row">
+                     <div class="scrollColumns-row">
+                        <div class="grid-template-columns scroll-gridColumns">
+                           <div class="grid-column-snap-align">
+                              <a target="_blank" href="/"
+                                 class="grid-column-link">
+                                 <div class="grid-cols card-album card-album">
+                                    <div class="clearfix">
+                                       <img class="grid-column-img card-img-top overflow-hidden card-img-top overflow-hidden"
+                                          aria-hidden="true" alt="" decoding="async"
+                                          src="assets/img/2.jpg?im_w=720">
+                                    </div>
+                                    <div class="grid-column-bottom" style="background-color: rgb(0, 0, 0);">
+                                       <div class="heading card-img-bottom overflow-hidden">
+                                          <div class="width-cols">Learn about Thailand’s
+                                             transgender&nbsp;history
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </a>
+                           </div>
+                           <div class="grid-column-snap-align">
+                              <a target="_blank" href="/"
+                                 class="grid-column-link">
+                                 <div class="grid-cols card-album">
+                                    <div class="clearfix">
+                                       <img class="grid-column-img card-img-top overflow-hidden"
+                                          aria-hidden="true" alt="" decoding="async"
+                                          src="assets/img/3.jpg?im_w=720">
+                                    </div>
+                                    <div class="grid-column-bottom" style="background-color: rgb(0, 0, 0);">
+                                       <div class="heading card-img-bottom overflow-hidden">
+                                          <div class="clearfix">Write and discuss queer poetry with
+                                             an&nbsp;artist
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </a>
+                           </div>
+                           <div class="grid-column-snap-align">
+                              <a target="_blank" href="/"
+                                 class="grid-column-link">
+                                 <div class="grid-cols card-album">
+                                    <div class="clearfix">
+                                       <img class="grid-column-img card-img-top overflow-hidden"
+                                          aria-hidden="true" alt="" decoding="async"
+                                          src="assets/img/4.jpg?im_w=720">
+                                    </div>
+                                    <div class="grid-column-bottom" style="background-color: rgb(0, 0, 0);">
+                                       <div class="heading card-img-bottom overflow-hidden">
+                                          <div class="clearfix">Sing along to a drag queen musical
+                                             in&nbsp;Lisbon
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </a>
+                           </div>
+                           <div class="grid-column-snap-align">
+                              <a target="_blank" href="/"
+                                 class="grid-column-link">
+                                 <div class="grid-cols card-album">
+                                    <div class="clearfix">
+                                       <img class="grid-column-img card-img-top overflow-hidden"
+                                          aria-hidden="true" alt="" decoding="async"
+                                          src="assets/img/5.jpg?im_w=720">
+                                    </div>
+                                    <div class="grid-column-bottom" style="background-color: rgb(0, 0, 0);">
+                                       <div class="heading card-img-bottom overflow-hidden">
+                                          <div class="width-cols">Explore London’s LGBTQIA+ scene with Aisha
+                                             for a&nbsp;cause
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <!-- Grid row -->
+            </div>
+         </div>
+         <!-- Explore all end here -->
+         <!-- Get involved start here -->
+         <div class="bg-section">
+            <div class="container">
+               <div class="row align-items-center">
+                  <div class="col-xs-12 col-md-6 col-sm-12">
+                     <h2 class="getinvolved-col font-weight-bold">Host a hero: help to house frontline responders
+                        around the&nbsp;world
+                     </h2>
+                     <div class="mt-4 clearfix"><a href="/" class="btn-get btn btn-outline-dark">Get involved</a>
+                     </div>
+                  </div>
+                  <div class="col-xs-12 col-md-6 col-sm-12">
+                     <div class="medium-description getinvolved-col">With frontline stays, Airbnb is partnering with
+                        our hosts to connect
+                        100,000 healthcare providers, relief workers, and first responders with clean places to stay
+                        that allow them to be close to their patients – and safely distanced from their
+                        own&nbsp;families.
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- Get involved end here -->
+         <!-- Stay informed start here -->
+         <div class="bg-section bg-light">
+            <div class="container">
+               <div class="row">
+                  <div class="col-md-12">
+                     <h4 class="font-weight-medium mb-5">Stay informed</h4>
+                     <div class="scroll-snap-row">
+                        <div class="col-xl-3 col-lg-3 col-md-6 mb-3">
+                           <h5 class="font-weight-normal mb-3">For guests</h5>
+                           <a class="flex-direction-link" href="/">
+                              <span class="heading font-weight-medium">Updates for&nbsp;travel</span>
+                              <p class="normal-text">What you should&nbsp;know</p>
+                           </a>
+                           <a class="flex-direction-link" href="/">
+                              <span class="heading font-weight-medium">Cancellation options</span>
+                              <p class="normal-text">Learn what’s covered</p>
+                           </a>
+                           <a class="flex-direction-link" href="/">
+                              <span class="heading font-weight-medium">Help Centre</span>
+                              <p class="normal-text">Get support</p>
+                           </a>
+                        </div>
+                        <div class="col-xl-3 col-lg-3 col-md-6 mb-3">
+                           <h5 class="font-weight-normal mb-3">For hosts</h5>
+                           <a class="flex-direction-link" href="/">
+                              <span class="heading font-weight-medium">Message from Brian Chesky</span>
+                              <p class="normal-text">Hear from our CEO</p>
+                           </a>
+                           <a class="flex-direction-link" href="/">
+                              <span class="heading font-weight-medium">Resources for hosting</span>
+                              <p class="normal-text">What’s affected by COVID-19</p>
+                           </a>
+                           <a class="flex-direction-link" href="/">
+                              <span class="heading font-weight-medium">Providing frontline stays</span>
+                              <p class="normal-text">Learn how to help</p>
+                           </a>
+                        </div>
+                        <div class="col-xl-3 col-lg-3 col-md-6 mb-3">
+                           <h5 class="font-weight-normal mb-3">For COVID-19</h5>
+                           <a class="flex-direction-link" href="/">
+                              <span class="heading font-weight-medium">Frontline stays</span>
+                              <p class="normal-text">Learn about our programme</p>
+                           </a>
+                           <a class="flex-direction-link" href="/">
+                              <span class="heading font-weight-medium">Sign up</span>
+                              <p class="normal-text">Check for housing options</p>
+                           </a>
+                           <a class="flex-direction-link" href="/">
+                              <span class="heading font-weight-medium">Make a donation</span>
+                              <p class="normal-text">Support nonprofit organisations</p>
+                           </a>
+                        </div>
+                        <div class="col-xl-3 col-lg-3 col-md-6 mb-3">
+                           <h5 class="font-weight-normal mb-3">More</h5>
+                           <a class="flex-direction-link" href="/">
+                              <span class="heading font-weight-medium">Airbnb Newsroom</span>
+                              <p class="normal-text">Latest announcements</p>
+                           </a>
+                           <a class="flex-direction-link" href="/">
+                              <span class="heading font-weight-medium">World Health Organization</span>
+                              <p class="normal-text">Education and updates</p>
+                           </a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- Stay informed end here -->
+         <!-- Destinations start here -->
+         <div class="bg-section">
+            <div class="container">
+               <div class="row">
+                  <div class="col-md-12">
+                     <h4 class="font-weight-medium mb-5">Destinations for future trips</h4>
+                  </div>
+                  <div class="col-xl-3 col-lg-4 col-md-6">
+                     <div class="destinations-links">
+                        <a class="heading text-truncate" href="/">
+                        San Francisco
+                        </a>
+                     </div>
+                  </div>
+                  <div class="col-xl-3 col-lg-4 col-md-6">
+                     <div class="destinations-links">
+                        <a class="heading text-truncate" href="/">
+                        Los Angeles
+                        </a>
+                     </div>
+                  </div>
+                  <div class="col-xl-3 col-lg-4 col-md-6">
+                     <div class="destinations-links">
+                        <a class="heading text-truncate" href="/">
+                        New York
+                        </a>
+                     </div>
+                  </div>
+                  <div class="col-xl-3 col-lg-4 col-md-6">
+                     <div class="destinations-links">
+                        <a class="heading text-truncate" href="/">
+                        Seattle
+                        </a>
+                     </div>
+                  </div>
+                  <div class="col-xl-3 col-lg-4 col-md-6">
+                     <div class="destinations-links">
+                        <a class="heading text-truncate" href="/">
+                        Denver
+                        </a>
+                     </div>
+                  </div>
+                  <div class="col-xl-3 col-lg-4 col-md-6">
+                     <div class="destinations-links">
+                        <a class="heading text-truncate" href="/">
+                        Washington DC
+                        </a>
+                     </div>
+                  </div>
+                  <div class="col-xl-3 col-lg-4 col-md-6">
+                     <div class="destinations-links">
+                        <a class="heading text-truncate" href="/">
+                        Phoenix
+                        </a>
+                     </div>
+                  </div>
+                  <div class="col-xl-3 col-lg-4 col-md-6">
+                     <div class="destinations-links">
+                        <a class="heading text-truncate" href="/">
+                        Austin
+                        </a>
+                     </div>
+                  </div>
+                  <div class="col-xl-3 col-lg-4 col-md-6">
+                     <div class="destinations-links">
+                        <a class="heading text-truncate" href="/">
+                        Houston
+                        </a>
+                     </div>
+                  </div>
+                  <div class="col-xl-3 col-lg-4 col-md-6">
+                     <div class="destinations-links">
+                        <a class="heading text-truncate" href="/">
+                        New Orleans
+                        </a>
+                     </div>
+                  </div>
+                  <div class="col-xl-3 col-lg-4 col-md-6">
+                     <div class="destinations-links">
+                        <a class="heading text-truncate" href="/">
+                        Boston
+                        </a>
+                     </div>
+                  </div>
+                  <div class="col-xl-3 col-lg-4 col-md-6">
+                     <div class="destinations-links">
+                        <a class="heading text-truncate" href="/">
+                        Miami
+                        </a>
+                     </div>
+                  </div>
+               </div>
+               <div class="borderline-bottom">&nbsp;</div>
+            </div>
+         </div>
+         <!-- Destinations end here -->
+      </main>
+      <!-- footer start here -->
+      <footer>
+         <div class="container">
+            <div class="row">
+               <div class="col-xl-3 col-lg-3 col-md-6 footer-mobile-bdr">
+                  <div class="footer-wrapper">
+                     <h6 class="footer-title">ABOUT</h6>
+                     <ul class="fotter-menu">
+                        <li><a href="/diversity">Diversity &amp; Belonging</a>
+                        </li>
+                        <li><a href="/accessibility">Accessibility</a></li>
+                        <li><a href="/trust">Trust &amp; Safety</a></li>
+                        <li><a href="/">Airbnb Citizen</a></li>
+                        <li><a href="/d/olympics">Olympics</a></li>
+                        <li><a href="/press/news">Newsroom</a></li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="col-xl-3 col-lg-3 col-md-6 footer-mobile-bdr">
+                  <div class="footer-wrapper">
+                     <h6 class="footer-title">COMMUNITY</h6>
+                     <ul class="fotter-menu">
+                        <li><a href="/magazine">Airbnb Magazine</a></li>
+                        <li><a href="/associates?from=footer">Airbnb Associates</a></li>
+                        <li><a href="/work?s=footer">Airbnb for Work</a></li>
+                        <li><a href="/invite?r=6">Invite friends</a></li>
+                        <li><a href="/careers">Careers</a></li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="col-xl-3 col-lg-3 col-md-6 footer-mobile-bdr">
+                  <div class="footer-wrapper">
+                     <h6 class="footer-title">Host</h6>
+                     <ul class="fotter-menu">
+                        <li><a href="/host/homes?from_footer=1">Host your home</a></li>
+                        <li><a href="/d/onlinehost">Host an online experience</a></li>
+                        <li><a href="/host-message">Message from CEO Brian Chesky</a></li>
+                        <li><a href="/help/responsible-hosting">Responsible hosting</a></li>
+                        <li><a href="/openhomes?from_footer=1">Open Homes</a></li>
+                        <li><a href="/resources">Resource Centre</a></li>
+                        <li><a href="/help/community?s=footer">Community Centre</a></li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="col-xl-3 col-lg-3 col-md-6 footer-mobile-bdr">
+                  <div class="footer-wrapper">
+                     <h6 class="footer-title">SUPPORT</h6>
+                     <ul class="fotter-menu">
+                        <li><a href="/covid">Updates for COVID-19</a></li>
+                        <li><a href="/help?from=footer">Help Centre</a></li>
+                        <li><a
+                           href="/help/article/2701/extenuating-circumstances-policy-and-the-coronavirus-covid19">Cancellation
+                           options</a>
+                        </li>
+                        <li><a href="/neighbors">Neighbourhood Support</a></li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+            <div class="footer-bottom">
+               <div class="row">
+                  <div class="col-xl-8 col-lg-6 col-md-6">
+                     <div class="copyright">
+                        <p> © 2020 Airbnb, Inc.
+                           All rights reserved. <span class="dotted"></span><a href="/">Privacy</a> <span
+                              class="dotted">·</span> <a href="/terms">Terms</a> <span class="dotted">·</span> <a
+                              href="/">Sitemap</a>
+                        </p>
+                     </div>
+                  </div>
+                  <div class="col-xl-4 col-lg-6 col-md-6">
+                     <div class="text-md-right">
+                        <div class="footer-icons">
+                           <a href="#"><i class="fas fa-globe"></i> <span class="inlinetxt">English (IN)</span></a>
+                           <a href="#"><i class="fas fa-rupee-sign"></i> <span class="inlinetxt"> INR</span></a>
+                           <span class="dotted"></span>
+                           <a href="/"><i class="fab fa-facebook-f"></i></a> <a href="/"><i
+                              class="fab fa-twitter"></i></a> <a href="/"><i class="fab fa-instagram"></i></a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </footer>
+      <!-- footer end here -->
+      <!-- jQuery start here -->
+      <script src="assets/js/jquery-3.5.1.slim.min.js"></script>
+      <!-- scrollIt -->
+      <script src="assets/js/scrollIt.min.js"></script>
+      <!-- wow -->
+      <script src="assets/js/wow.min.js"></script>
+      <!-- owl carousel -->
+      <script src="assets/js/owl.carousel.min.js"></script>
+      <!-- datepicker scripts -->
+      <script src="datepicker/moment.min.js"></script>
+      <script src="datepicker/daterangepicker.min.js"></script>
+      <!-- custom scripts -->
+      <script src="assets/js/custom.js"></script>
+      <!-- Bootstrap JS -->
+      <script src="dist/js/popper.min.js"></script>
+      <script src="dist/js/bootstrap.min.js"></script>
+      <!-- End js -->
+   </body>
 </html>

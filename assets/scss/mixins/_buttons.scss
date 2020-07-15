@@ -1,0 +1,265 @@
+// Button variants
+@mixin button-variant(
+  $background,
+  $border,
+  $hover-background: darken($background, 7.5%),
+  $hover-border: darken($border, 10%),
+  $active-background: darken($background, 10%),
+  $active-border: darken($border, 12.5%)
+) {
+  color: color-yiq($background);
+  @include gradient-bg($background);
+  border-color: $border;
+  @include box-shadow($btn-box-shadow);
+
+  @include hover() {
+    color: color-yiq($hover-background);
+    @include gradient-bg($hover-background);
+    border-color: $hover-border;
+  }
+
+  &:focus,
+  &.focus {
+    color: color-yiq($hover-background);
+    @include gradient-bg($hover-background);
+    border-color: $hover-border;
+    box-shadow: none;
+  }
+
+  // Disabled comes first so active can properly restyle
+  &.disabled,
+  &:disabled {
+    color: color-yiq($background);
+    background-color: $background;
+    border-color: $border;
+    @if $enable-gradients {
+      background-image: none;
+    }
+  }
+
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active,
+  .show > &.dropdown-toggle {
+    color: color-yiq($active-background);
+    background-color: $active-background;
+    @if $enable-gradients {
+      background-image: none;
+    }
+    border-color: $active-border;
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
+}
+
+@mixin button-outline-variant(
+  $color,
+  $color-hover: color-yiq($color),
+  $active-background: $color,
+  $active-border: $color
+) {
+  color: $color;
+  border-color: $color;
+
+  @include hover() {
+    color: $color-hover;
+    background-color: $active-background;
+    border-color: $active-border;
+  }
+
+  &:focus,
+  &.focus {
+    box-shadow: none;
+  }
+
+  &.disabled,
+  &:disabled {
+    color: $color;
+    background-color: transparent;
+  }
+
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active,
+  .show > &.dropdown-toggle {
+    color: color-yiq($active-background);
+    background-color: $active-background;
+    border-color: $active-border;
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
+}
+
+// Button sizes
+@mixin button-size($padding-y, $padding-x, $font-size, $line-height, $border-radius) {
+  padding: $padding-y $padding-x;
+  @include font-size($font-size);
+  line-height: $line-height;
+  @include border-radius($border-radius, 0);
+}
+
+@mixin btn-circle($border-radius: $rounded-pill) {
+  width: 32px;
+  height: 32px;
+  line-height: 32px;
+  border-radius: $rounded-pill;
+  text-align: center;
+  &:focus,
+  &:hover {
+    box-shadow: none;
+    outline: none;
+  }
+}
+
+@mixin btn-clear($font-weight: $font-weight-medium, $color: $gray-400) {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  width: auto;
+  font-weight: $font-weight-medium;
+  margin: 0px -10px;
+  border-radius: 8px;
+  outline: none;
+  border-width: initial;
+  border-style: none;
+  border-color: initial;
+  border-image: initial;
+  background: transparent;
+  text-decoration: underline;
+  transition: box-shadow 0.2s ease 0s, -ms-transform 0.1s ease 0s, -webkit-transform 0.1s ease 0s,
+    transform 0.1s ease 0s;
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 1;
+    color: $gray-400;
+    border-width: initial;
+    border-style: none;
+    border-color: initial;
+    border-image: initial;
+    background: transparent;
+  }
+}
+
+@mixin btn-add-more(
+  $border-color: $gray-400,
+  $background-color: $white,
+  $color: $gray-900,
+  $border-color: $gray-900,
+  $color: $gray-300
+) {
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
+  -webkit-box-flex: 0;
+  flex-grow: 0;
+  flex-shrink: 0;
+  cursor: pointer;
+  display: inline-flex;
+  text-align: center;
+  font-family: inherit;
+  touch-action: manipulation;
+  align-items: center;
+  justify-content: center;
+  margin: 0px;
+  padding: 0px;
+  text-decoration: none;
+  border-width: 1px;
+  border-style: solid;
+  border-color: $gray-400;
+  outline: none;
+  background-color: $white;
+  &:hover {
+    color: $gray-900;
+    border-color: $gray-900;
+    background-color: $white;
+  }
+  &:disabled {
+    cursor: not-allowed;
+    color: $gray-300;
+    border-color: $gray-300;
+    background-color: $white;
+  }
+}
+
+@mixin button-submit($color: $white, $border-color: $black, $font-weight: $font-weight-medium, $background-color: $gray-400) {
+  cursor: pointer;
+  display: inline-block;
+  margin: 0px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  border-color: $black;
+  width: auto;
+  font-size: $font-size-base;
+  color: $white;
+  line-height: 20px;
+  font-weight: $font-weight-medium;
+  border-radius: 8px;
+  border-width: 1px;
+  border-style: solid;
+  border: none;
+  outline: none;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  vertical-align: middle;
+  white-space: nowrap;
+  -webkit-transition: box-shadow 0.2s ease, -webkit-transform 0.1s ease, transform 0.1s ease;
+  -moz-transition: box-shadow 0.2s ease, transform 0.1s ease;
+  transition: box-shadow 0.2s ease, -ms-transform 0.1s ease, -webkit-transform 0.1s ease, transform 0.1s ease;
+
+  background: -webkit-linear-gradient(to right, #e61e4d 0%, #e31c5f 50%, #d70466 100%);
+  background: -moz-linear-gradient(to right, #e61e4d 0%, #e31c5f 50%, #d70466 100%);
+  background: linear-gradient(to right, #e61e4d 0%, #e31c5f 50%, #d70466 100%);
+
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+  &:hover {
+    border: none;
+    background: -webkit-linear-gradient(to right, #e61e4d 0%, #e31c5f 50%, #d70466 100%);
+    background: -moz-linear-gradient(to right, #e61e4d 0%, #e31c5f 50%, #d70466 100%);
+    background: linear-gradient(to right, #e61e4d 0%, #e31c5f 50%, #d70466 100%);
+    color: $white;
+  }
+  &:active {
+    -webkit-transform: scale(0.96);
+    -ms-transform: scale(0.96);
+    transform: scale(0.96);
+    border: none;
+    background-color: #ff385c;
+    color: $white;
+  }
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 1;
+    border: none;
+    background-color: $gray-400;
+    color: $white;
+  }
+}
+
+@mixin btn-close($color: $gray-900, $background-color: $gray-100) {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  font-size: 28px;
+  z-index: 9;
+  color: $gray-900;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  &:hover,
+  &:active,
+  &:focus {
+    color: $gray-900;
+    background-color: $gray-100;
+  }
+  span {
+    position: relative;
+    top: -2px;
+  }
+}

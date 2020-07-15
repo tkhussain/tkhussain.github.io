@@ -1,0 +1,123 @@
+// Lists
+@mixin list-unstyled() {
+  padding-left: 0;
+  list-style: none;
+}
+
+.flex-direction-link {
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  display: flex;
+  flex-direction: column;
+  padding: 0.8rem 0rem;
+  border-top: 1px solid $gray-500;
+  &:hover,
+  &:focus {
+    color: $gray-900;
+    text-decoration: underline;
+  }
+  .heading {
+    font-size: $font-size-base;
+    color: $gray-900;
+    line-height: 22px;
+    white-space: pre-wrap;
+    padding-bottom: 0.1rem;
+  }
+  .normal-text {
+    white-space: pre-wrap;
+    font-size: $font-size-deault;
+    color: $gray-600;
+    line-height: 18px;
+    margin-bottom: 0rem;
+  }
+}
+
+.destinations-links {
+  padding: 0.8rem 0rem;
+  border-bottom: 1px solid $gray-500;
+  &::nth-child(3) {
+    border-bottom: 0;
+  }
+  &::nth-child(n + 9) {
+    border-bottom: 0;
+  }
+  .heading {
+    font-size: $font-size-base;
+    color: $gray-900;
+    font-weight: $font-weight-bold;
+    line-height: 22px;
+    min-height: 30px;
+    -webkit-box-pack: justify;
+    -webkit-box-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &:hover,
+    &:focus {
+      color: $gray-900;
+      text-decoration: underline;
+    }
+  }
+}
+
+.borderline-bottom {
+  border-top-width: 1px !important;
+  border-top-style: solid !important;
+  transform: translateY(-1px) !important;
+  border-top-color: $white;
+}
+
+@media (min-width: 744px) {
+  .scroll-snap-row {
+    flex-wrap: wrap;
+    scroll-padding: 0px;
+  }
+}
+.scroll-snap-row {
+  display: -webkit-box;
+  scroll-snap-type: x mandatory;
+  overflow-x: auto;
+  scroll-padding: 24px;
+}
+
+.flex-direction-unlink,
+.instant-book,
+.searchFlow-label-stepper {
+  li {
+    padding: 0rem;
+    margin: 0rem 0rem 1rem;
+    .filterItem-checkbox {
+      -webkit-box-align: center;
+      display: flex;
+      align-items: center;
+    }
+  }
+  .heading {
+    font-size: $font-size-base;
+    color: $gray-900;
+    line-height: 22px;
+    //white-space: pre-wrap;
+    padding-bottom: 0.1rem;
+    font-weight: $font-weight-normal;
+  }
+  .normal-text {
+    white-space: pre-wrap;
+    font-size: $font-size-deault;
+    line-height: 18px;
+    margin-bottom: 0rem;
+  }
+}
+
+.searchFlow-label-stepper {
+  -webkit-box-flex: 1;
+  flex-grow: 1;
+  .heading {
+    font-weight: $font-weight-medium !important;
+  }
+}
+
+.list-group-item-border-btm {
+  &:not(:last-child) {
+    border-bottom: 1px solid $gray-300;
+  }
+}

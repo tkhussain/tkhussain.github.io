@@ -1,0 +1,86 @@
+// Base class
+.badge {
+  display: inline-block;
+  padding: $badge-padding-y $badge-padding-x;
+  @include font-size($badge-font-size);
+  font-weight: $badge-font-weight;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  @include border-radius($badge-border-radius);
+  @include transition($badge-transition);
+
+  @at-root a#{&} {
+    @include hover-focus() {
+      text-decoration: none;
+    }
+  }
+
+  // Empty badges collapse automatically
+  &:empty {
+    display: none;
+  }
+}
+
+// Quick fix for badges in buttons
+.btn .badge {
+  position: relative;
+  top: -1px;
+}
+
+// Pill badges
+.badge-pill {
+  padding-right: $badge-pill-padding-x;
+  padding-left: $badge-pill-padding-x;
+  @include border-radius($badge-pill-border-radius);
+}
+
+// Colors
+@each $color, $value in $theme-colors {
+  .badge-#{$color} {
+    @include badge-variant($value);
+  }
+}
+
+.badge-sup-top-left {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 3;
+}
+
+.badge-superhot {
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.18);
+}
+
+.wish-list {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 3;
+  cursor: pointer;
+  transition: -ms-transform 0.25s ease, -webkit-transform 0.25s ease, transform 0.25s ease;
+  .default {
+    color: $white;
+    svg {
+      fill: rgba(0, 0, 0, 0.5);
+      height: 24px;
+      width: 24px;
+      stroke: $white;
+      stroke-width: 2;
+      overflow: visible;
+    }
+  }
+  .addWish {
+    font-size: 22px;
+    color: $pink;
+  }
+  &:active {
+    -webkit-transform: scale(0.92);
+    -ms-transform: scale(0.92);
+    transform: scale(0.92);
+  }
+}
